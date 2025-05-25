@@ -55,19 +55,13 @@ A Python module for generating realistic synthetic weather data with seasonal pa
 
 ### 1. Clone the repository
 
-```bash
+
 git clone https://github.com/yourusername/weather-data-generator.git
 cd weather-data-generator
 2. Create and activate a virtual environment (recommended)
-bash
-Copy
-Edit
 python -m venv venv
 source venv/bin/activate  # or venv\Scripts\activate on Windows
 3. Install dependencies
-bash
-Copy
-Edit
 pip install -r requirements.txt
 # Configuration
 You can customize parameters such as:
@@ -84,9 +78,6 @@ Edit the config/default_config.yaml or pass your own config file path to the gen
 
 # Usage
 From Python
-python
-Copy
-Edit
 from src.weather_generator import WeatherDataGenerator
 
 generator = WeatherDataGenerator(config_path="config/default_config.yaml")
@@ -97,7 +88,4 @@ date	temperature	humidity	wind_speed	pressure	precipitation	cloud_cover
 2021-01-01	12.5	65.3	10.2	1015.4	0.0	40.1
 
 # Running Tests
-bash
-Copy
-Edit
 pytest tests/
