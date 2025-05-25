@@ -38,3 +38,66 @@ weather-data-analysis/
     ├── test_data_generator.py
     ├── test_data_cleaner.py
     └── test_feature_engineer.py
+
+# 🌦️ Weather Data Generator
+
+A Python module for generating realistic synthetic weather data with seasonal patterns, missing values, and extreme weather events.
+
+## 📌 Features
+
+- Seasonal temperature, humidity, and precipitation patterns
+- Random noise and annual trends
+- Configurable extreme weather events (heat waves, cold snaps)
+- Simulated sensor anomalies (missing values, outliers)
+- YAML-based configuration
+
+## 🛠️ Setup
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/yourusername/weather-data-generator.git
+cd weather-data-generator
+2. Create and activate a virtual environment (recommended)
+bash
+Copy
+Edit
+python -m venv venv
+source venv/bin/activate  # or venv\Scripts\activate on Windows
+3. Install dependencies
+bash
+Copy
+Edit
+pip install -r requirements.txt
+# Configuration
+You can customize parameters such as:
+
+n_days: Number of days to simulate
+
+start_date: Start date of the simulation
+
+missing_value_rate: Fraction of data to be missing
+
+extreme_events: Number of extreme events
+
+Edit the config/default_config.yaml or pass your own config file path to the generator.
+
+# Usage
+From Python
+python
+Copy
+Edit
+from src.weather_generator import WeatherDataGenerator
+
+generator = WeatherDataGenerator(config_path="config/default_config.yaml")
+weather_df = generator.generate_weather_data()
+print(weather_df.head())
+Output example:
+date	temperature	humidity	wind_speed	pressure	precipitation	cloud_cover
+2021-01-01	12.5	65.3	10.2	1015.4	0.0	40.1
+
+# Running Tests
+bash
+Copy
+Edit
+pytest tests/
