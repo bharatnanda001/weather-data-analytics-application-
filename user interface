@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Visualization Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Chart.js CDN (for charts) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 20px;
+            background: #f8f9fa;
+        }
+        h1, h2 {
+            color: #343a40;
+        }
+        .chart-container {
+            width: 80%;
+            margin: 30px auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        canvas {
+            max-width: 100%;
+        }
+        p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>📊 Data Visualization Project: [Your Topic]</h1>
+    <p><strong>Objective:</strong> Analyze and visualize data to extract meaningful insights.</p>
+
+    <h2>🧮 Dataset Overview</h2>
+    <p>Source: [Dataset Source, e.g., Kaggle/Open Data]</p>
+    <p>Description: [Brief overview of the dataset: rows, columns, type]</p>
+
+    <h2>📈 Visualizations</h2>
+
+    <div class="chart-container">
+        <h3>Example Bar Chart – [Title]</h3>
+        <canvas id="barChart"></canvas>
+    </div>
+
+    <div class="chart-container">
+        <h3>Example Line Chart – [Title]</h3>
+        <canvas id="lineChart"></canvas>
+    </div>
+
+    <h2>🧠 Insights & Storytelling</h2>
+    <ul>
+        <li>Insight 1 – [What trend/pattern did you observe?]</li>
+        <li>Insight 2 – [Any anomaly or interesting comparison?]</li>
+        <li>Insight 3 – [Actionable insight or recommendation]</li>
+    </ul>
+
+    <script>
+        // Sample Bar Chart
+        const ctx1 = document.getElementById('barChart').getContext('2d');
+        new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: ['A', 'B', 'C', 'D'],
+                datasets: [{
+                    label: 'Sample Values',
+                    data: [12, 19, 3, 5],
+                    backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Sample Line Chart
+        const ctx2 = document.getElementById('lineChart').getContext('2d');
+        new Chart(ctx2, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr'],
+                datasets: [{
+                    label: 'Monthly Data',
+                    data: [10, 15, 12, 18],
+                    fill: false,
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+    </script>
+
+</body>
+</html>
